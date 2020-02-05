@@ -62,7 +62,7 @@ class CategoryController extends Controller
     public function add(Request $request) {
 
         if ($_POST) {
-            $validator = $validator = $this->validation($request);
+            $validator = $this->validation($request);
 
             if ($validator->fails()) {
                 return redirect('cms/category/add')

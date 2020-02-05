@@ -32,7 +32,7 @@
                                     <td class=" ">@if ($row->post_picture != null) {{$row->post_picture}} @endif</td>
                                     <td class=" ">{{ $row->post_title }}</td>
                                     <td class=" ">{{ $row->category_name }}</td>
-                                    <td class=" ">{{ $row->post_status }}</td>
+                                    <td class=" ">{{ $statusList[$row->post_status] }}</td>
                                     <td class=" last">
                                         <a href="{{route('cms/post/edit', ['id' => $row->post_id])}}">{{trans('Cập nhật')}}</a>
                                         &nbsp;|&nbsp;

@@ -8,7 +8,7 @@
         <div class="col-md-12 col-sm-12 ">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>{{trans('Thêm mới danh mục')}}</h2>
+                    <h2>{{trans('Thêm mới bài viết')}}</h2>
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
@@ -28,18 +28,23 @@
                         {!! Form::open(['method' => 'post']) !!}
                         @csrf
                         <div class="item form-group">
-                            {!! Form::label('email', trans('Tên danh mục'), ['class' => 'col-form-label col-md-3 col-sm-3 label-align'])  !!}
+                            {!! Form::label('email', trans('Tiêu đề'), ['class' => 'col-form-label col-md-3 col-sm-3 label-align'])  !!}
                             <div class="col-md-6 col-sm-6 ">
-                                {!! Form::text('category_name', '', ['class' => 'form-control', 'required' => 'required', 'id' => 'category_name']) !!}
+                                {!! Form::text('post_title', '', ['class' => 'form-control', 'required' => 'required', 'id' => 'post_title']) !!}
                             </div>
                         </div>
                         <div class="item form-group">
-                            {!! Form::label('email', trans('Thuộc danh mục'), ['class' => 'col-form-label col-md-3 col-sm-3 label-align']) !!}
+                            {!! Form::label('email', trans('Danh mục'), ['class' => 'col-form-label col-md-3 col-sm-3 label-align']) !!}
                             <div class="col-md-6 col-sm-6 ">
-                                {!! Form::select('category_parent', $categoriesSelect, '', ['class' => 'form-control', 'required' => 'required', 'id' => 'category_parent']) !!}
+                                {!! Form::select('category_id', $categoriesSelect, '', ['class' => 'form-control', 'required' => 'required', 'id' => 'category_id']) !!}
                             </div>
                         </div>
-
+                        <div class="item form-group">
+                            {!! Form::label('email', trans('Trạng thái'), ['class' => 'col-form-label col-md-3 col-sm-3 label-align']) !!}
+                            <div class="col-md-6 col-sm-6 ">
+                                {!! Form::select('post_status', $statusList, '', ['class' => 'form-control', 'required' => 'required', 'id' => 'post_status']) !!}
+                            </div>
+                        </div>
                         <div class="ln_solid"></div>
                         <div class="item form-group">
                             <div class="col-md-6 col-sm-6 offset-md-3">
